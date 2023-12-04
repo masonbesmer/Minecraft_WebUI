@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>what</title>
+        <link rel="stylesheet" href="/assets/style.css" />    
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Damage</th>
+                <th>HasTag</th>
+                <th>IsCraftable</th>
+                <th>Label</th>
+                <th>MaxDamage</th>
+                <th>MaxSize</th>
+                <th>Name</th>
+                <th>Size</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>true</td>
+                <td>true</td>
+                <td>test</td>
+                <td>1</td>
+                <td>1</td>
+                <td>test</td>
+                <td>1</td>
+            </tr>
+            {{range .Items}}
+                <tr>
+                    <td>{{.Damage}}</td>
+                    <td>{{.HasTag}}</td>
+                    <td>{{.IsCraftable}}</td>
+                    <td>{{.Label}}</td>
+                    <td>{{.MaxDamage}}</td>
+                    <td>{{.MaxSize}}</td>
+                    <td>{{.Name}}</td>
+                    <td>{{.Size}}</td>
+                </tr>
+            {{end}}
+        </table>
+    </body>
+</html>
