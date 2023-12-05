@@ -5,42 +5,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>what</title>
-        <link rel="stylesheet" href="/assets/style.css" />    
+        <link rel="stylesheet" href="/assets/style.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
     </head>
     <body>
         <table>
-            <tr>
-                <th>Damage</th>
-                <th>HasTag</th>
-                <th>IsCraftable</th>
-                <th>Label</th>
-                <th>MaxDamage</th>
-                <th>MaxSize</th>
-                <th>Name</th>
-                <th>Size</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>true</td>
-                <td>true</td>
-                <td>test</td>
-                <td>1</td>
-                <td>1</td>
-                <td>test</td>
-                <td>1</td>
-            </tr>
-            {{range .Items}}
-                <tr>
-                    <td>{{.Damage}}</td>
-                    <td>{{.HasTag}}</td>
-                    <td>{{.IsCraftable}}</td>
-                    <td>{{.Label}}</td>
-                    <td>{{.MaxDamage}}</td>
-                    <td>{{.MaxSize}}</td>
-                    <td>{{.Name}}</td>
-                    <td>{{.Size}}</td>
-                </tr>
-            {{end}}
-        </table>
-    </body>
-</html>
+                    <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Damage</th>
+                                <th>HasTag</th>
+                                <th>IsCraftable</th>
+                                <th>Label</th>
+                                <th>MaxDamage</th>
+                                <th>MaxSize</th>
+                                <th>Name</th>
+                                <th>Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>true</td>
+                                <td>true</td>
+                                <td>test</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>test</td>
+                                <td>1</td>
+                            </tr>
+                            {{range .Items}}
+                                <tr>
+                                    <td>{{.Damage}}</td>
+                                    <td>{{.HasTag}}</td>
+                                    <td>{{.IsCraftable}}</td>
+                                    <td>{{.Label}}</td>
+                                    <td>{{.MaxDamage}}</td>
+                                    <td>{{.MaxSize}}</td>
+                                    <td>{{.Name}}</td>
+                                    <td>{{.Size}}</td>
+                                </tr>
+                            {{end}}
+                        </tbody>
+                    </table>
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $('#myTable').DataTable();
+                        });
+                    </script>
+                </body>
+            </html>
