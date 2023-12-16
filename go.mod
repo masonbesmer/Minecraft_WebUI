@@ -1,3 +1,3 @@
-module masonbesmer/ae2_webui
+module github.com/masonbesmer/Minecraft_WebUI
 
-go 1.21.4
+go 1.21.5

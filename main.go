@@ -57,7 +57,7 @@ func UpdateHandler(w http.ResponseWriter, r *http.Request) {
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Write([]byte("<h1>Hellod</h1>"))
 	data := IdxPageData{
-		PageTitle: "My TODO list",
+		PageTitle: "My TOsDO list",
 		Items:     items,
 	}
 
