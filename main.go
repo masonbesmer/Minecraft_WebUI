@@ -68,6 +68,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	log.Println("Starting server...")
 	tmpl = template.Must(template.ParseFiles("index.html"))
 	mux := http.NewServeMux()
 	fs := http.FileServer(http.Dir("assets"))
@@ -76,39 +77,3 @@ func main() {
 	mux.HandleFunc("/update", UpdateHandler)
 	log.Fatal(http.ListenAndServe(":3000", mux))
 }
-
-// package main
-
-// import (
-// 	"html/template"
-// 	"net/http"
-// )
-
-// type Todo struct {
-// 	Title string
-// 	Done  bool
-// }
-
-// type TodoPageData struct {
-// 	PageTitle string
-// 	Todos     []Todo
-// }
-
-// func main() {
-// 	tmpl := template.Must(template.ParseFiles("index.html"))
-// 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-// 		data := TodoPageData{
-// 			PageTitle: "My TODO list",
-// 			Todos: []Todo{
-// 				{Title: "Task 1", Done: false},
-// 				{Title: "Task 2", Done: true},
-// 				{Title: "Task 3", Done: true},
-// 			},
-// 		}
-// 		tmpl.Execute(w, data)
-// 	})
-// 	err := http.ListenAndServe(":3000", nil)
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// }
